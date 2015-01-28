@@ -1,34 +1,33 @@
+<!DOCTYPE html>
+{% autoescape true %}
 <html>
 <body>
-Hello {% if user %}
-    {{ user.nickname }}!
-    [<a href="{{ logout }}"><b>sign out</b></a>]
+  {% for greeting in greetings %}
+    {% if greeting.author %}
+      <b>{{ greeting.author.email }}
+	{% if user and user.user_id() == greeting.author.identity %}
+	  (You)
+	{% endif %}
+      </b> wrote:
     {% else %}
-        World!
-	[<a href="{{ login }}"><b>sign in</b></a>]
+      An anonymous person wrote:
     {% endif %}
+    <blockquote>{{ greeting.content }}</blockquote>
+   {% endfor %}
 
-    <h2>Top 10 Most Recent Guestbook Entries</h2>
+   <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+     <div><textarea name="content" rows="3" cols="60"></textarea></div>
+     <div><input type="submit" value="Sign Guestbook"></div>
+   </form>
 
-    {% for greeting in greetings %}
-        <br>
-	<small>[<i> {{ greeting.date.ctime }}</i></small>
-	<b>
-	    {% if greeting.author %}
-	        <code>{{ greeting.author.nickname }}</code>
-	    {% else %}
-	        <i>anonymous</i>
-	    {% endif %}
-	</b>
-	wrote:
-	{{ greeting.contentlescape }}
-    {% endfor %}
+   <hr />
 
-    <hr>
-    <form action="/sign" method=post>
-	<textarea name=content rows=3 cols=60></textarea>
-	<br>
-	<input type=submit value="Sign Guestbook">
-    </form>
+   <form>Guestbook name:
+     <input type="{{ guestbook_name }}" name="guestbook_name">
+     <input type="submit" value="switch">
+   </form>
+
+   <a href="{{ urlsafe }}">{{ url_linktext }}</a>
 </body>
 </html>
+{% endautoescape%}
