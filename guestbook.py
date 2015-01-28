@@ -64,7 +64,7 @@ class MainPage(webapp2.RequestHandler):
             url = users.create_logout_url(self.request.uri)
             url_linktext='Logout'
         else:
-            url = users.create_logout_url(self.request.uri)
+            url = users.create_login_url(self.request.uri)
             url_linktext='Login'
 
         sign_query_params = urllib.urlencode({'guestbook_name': guestbook_name})
