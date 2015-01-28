@@ -1,12 +1,12 @@
-application: hello-django-app-engine
+application: kaeruofvim
 version: 1
 runtime: python27
 api_version: 1
 threadsafe: true
 
 handlers:
-- url: .*
-  script: myproject.wsgi.application
+- url: /.*
+  script: helloworld.application
 
 libraries:
 - name: django
