@@ -15,8 +15,8 @@ handlers:
   script: guestbook.application
 
 - url: /
-  static_files: index\.html
-  upload: /
+  static_files: index.html
+  upload: /index.html
 
 libraries:
 - name: webapp2
