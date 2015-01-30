@@ -5,6 +5,10 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+
 - url: /stylesheets
   static_dir: stylesheets
 
@@ -13,10 +17,6 @@ handlers:
 
 - url: /(guest|sign)
   script: guestbook.application
-
-- url: /.*
-  static_files: index.html
-  upload: /index.html
 
 libraries:
 - name: webapp2
