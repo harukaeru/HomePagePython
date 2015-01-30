@@ -11,12 +11,12 @@ handlers:
 - url: /imgs
   static_dir: imgs
 
+- url: /(guest|sign)
+  script: guestbook.application
+
 - url: /
   static_files: index.html
   upload: /
-
-- url: /(guest|sign)
-  script: guestbook.application
 
 libraries:
 - name: webapp2
