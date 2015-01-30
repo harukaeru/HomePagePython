@@ -50,7 +50,7 @@ class MainPage(webapp2.RequestHandler):
             'url_linktext': url_linktext,
         }
 
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('guest.html')
         self.response.write(template.render(template_values))
 
 class Guestbook(webapp2.RequestHandler):
@@ -68,9 +68,9 @@ class Guestbook(webapp2.RequestHandler):
         greeting.put()
 
         query_params = {'guestbook_name': guestbook_name}
-        self.redirect('/?' + urllib.urlencode(query_params))
+        self.redirect('/guest?' + urllib.urlencode(query_params))
 
 application = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/guest', MainPage),
     ('/sign', Guestbook),
 ], debug=True)

@@ -8,7 +8,14 @@ handlers:
 - url: /stylesheets
   static_dir: stylesheets
 
-- url: /.*
+- url: /imgs
+  static_dir: imgs
+
+- url: /
+  static_files: index.html
+  upload: /
+
+- url: /(guest|sign)
   script: guestbook.application
 
 libraries:

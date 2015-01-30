@@ -1,36 +1,109 @@
 <!DOCTYPE html>
-{% autoescape true %}
 <html>
+<title>かえる おぶ びむ</title>
 <head>
-  <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 <body>
-  {% for greeting in greetings %}
-    {% if greeting.author %}
-      <b>{{ greeting.author.email }}
-	{% if user and user.user_id() == greeting.author.identity %}
-	  (You)
-	{% endif %}
-      </b> wrote:
-    {% else %}
-      An anonymous person wrote:
-    {% endif %}
-    <blockquote>{{ greeting.content }}</blockquote>
-   {% endfor %}
+<div id="pagetitle">
+  <div class="centering"><h1>かえる (東京・25)</h1></div>
+</div>
+<div id="introduce">
+  <table cellspacing="20">  
+    <tr>
+      <td>
+        <img src="imgs/prog-java.png" />
+      </td>
+      <td>
+        <p>Oracle Certified Master, Java SE 6 Developer</p>
+      </td>
+      <td>
+        <img src="imgs/os-win-04.png" />
+      </td>
+      <td>
+        <p>ぴーーーごろーーーーーびぎゃんびぎゃんびぎゃん</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="imgs/prog-csharp.png" />
+      </td>
+      <td>
+        <p>WPFでバインディングとかしてあそんでた（業務）</p>
+      </td>
+      <td>
+        <img src="imgs/os-apple.png" />
+      </td>
+      <td>
+        <p>PCの値段がたかかっただけ感。メインPC</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="imgs/prog-python.png" />
+      </td>
+      <td>
+        <p>下の掲示板つくった（Django + Google App Engine)
+      </td>
+      <td>
+        <img src="imgs/lin-ubuntu.png" />
+      </td>
+      <td>
+        <p><a href="http://www.catb.org/esr/faqs/hacker-howto.html">ココ</a>見て始めた。シェルスクリプトかわいいよシェルスクリプト</p>
+      </td>
+    </tr>
+  </table>
+</div>
 
-   <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-     <div><textarea name="content" rows="3" cols="60"></textarea></div>
-     <div><input type="submit" value="Sign Guestbook"></div>
-   </form>
+<div id="produce">
+  <table cellspacing="20">
+    <tr>
+      <td>
+        <a href="/guest"><img src="imgs/s_sozai_10167.jpg" /></a>
+      </td>
+      <td><p>掲示板(Python)</p>
+        <p>チュートリアルから生み出した単なるガラクタ</p></td>
+    </tr>
+  </table>
+</div>
 
-   <hr />
-
-   <form>Guestbook name:
-     <input type="{{ guestbook_name }}" name="guestbook_name">
-     <input type="submit" value="switch">
-   </form>
-
-   <a href="{{ urlsafe }}">{{ url_linktext }}</a>
-</body>
-</html>
-{% endautoescape%}
+<div id="contact">
+  <table cellspacing="20">  
+    <tr>
+      <td>
+        <a href="mailto:nekoneko.myaomyao@gmail.com"><img src="imgs/gmail.png" /></a>
+      </td>
+      <td>
+        <a href="mailto:nekoneko.myaomyao@gmail.com"><p>Gmail [ nekoneko.myaomyao@gmail.com ]</p></a>
+      </td>
+      <td colspan="2" rowspan="2">
+        <div id="twitter-widget">
+          <a class="twitter-timeline" href="https://twitter.com/KaeruVim" data-widget-id="560806788950265856">@KaeruVimさんのツイート</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/harukaeru"><img src="imgs/github-01.png" /></a>
+      </td>
+      <td>
+        <a href="https://github.com/harukaeru"><p>GitHub</p></a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://heppoko.hatenadiary.jp/"><img src="imgs/s_mzliqcasixz.png"></a>
+      </td>
+      <td>
+        <a href="http://heppoko.hatenadiary.jp/">ブログ [ へっぽこびんぼう野郎のnewbie日記 ]</a>
+      </td>
+      <td>
+        <a href="http://stackoverflow.com/users/3161279/kerorin"><img src="imgs/s_apple-touch-icon.png"></a>
+      </td>
+      <td>
+        <a href="http://stackoverflow.com/users/3161279/kerorin">StackOverflow (質問してもあまり返事が来ないから最近は使ってない)</a>
+      </td>
+    </div>
+    </body>
