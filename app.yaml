@@ -15,7 +15,7 @@ handlers:
   script: guestbook.application
 
 - url: /
-  static_files: index.html
+  static_files: index\.html
   upload: /
 
 libraries:
