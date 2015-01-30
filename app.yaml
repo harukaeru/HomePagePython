@@ -14,7 +14,7 @@ handlers:
 - url: /(guest|sign)
   script: guestbook.application
 
-- url: /
+- url: /.*
   static_files: index.html
   upload: /index.html
 
