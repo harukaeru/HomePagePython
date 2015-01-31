@@ -35,9 +35,14 @@ a:link {
   top: 45%;
 }
 
+.centering {
+  display:inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
 #introduce {
   background-color: #ececec;
-  height: 63%;
 }
 
 #produce {
